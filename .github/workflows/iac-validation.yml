@@ -7,9 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source Code Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       - name: Configure Terraform Core Runtime Environment
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v3.1.2
         with:
           terraform_version: 1.5.7
+
