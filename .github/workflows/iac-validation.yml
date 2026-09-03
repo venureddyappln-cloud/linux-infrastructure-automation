@@ -1,0 +1,15 @@
+name: "Infrastructure Validation Pipeline"
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code Repo
+        uses: actions/checkout@v4
+
+      - name: Configure Terraform Core Runtime Environment
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.5.7
