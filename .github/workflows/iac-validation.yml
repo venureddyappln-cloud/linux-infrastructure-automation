@@ -14,3 +14,13 @@ jobs:
         with:
           terraform_version: 1.5.7
 
+      - name: Validate File Code Formatting Standards
+        run: terraform fmt -check -recursive
+
+      - name: Initialize & Validate Terraform Code
+        run: |
+          cd terraform/modules/aws_compute
+          terraform init -backend=false
+          terraform validate
+
+
